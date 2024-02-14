@@ -1,12 +1,8 @@
 .bodyInformation {
-  background-color: #007bff;
-  max-width: 600px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
+  height: 66vh;
 }
 #charactersContainer {
-  background-color: aquamarine;
+  background-color: #c4c4c4;
   width: 33vw;
   height: 60vh;
   display: flex;
@@ -14,9 +10,29 @@
   align-items: center;
   position: absolute;
   top: 30%;
+  left: 12%;
 }
-#charactersContainer h2{
-background-color:#424242 ;
+#charactersContainer #title,
+#charactersDetail #title {
+  background-color: #535556;
+  width: 100%;
+  height: 20%;
+  text-align: center;
+}
+#charactersContainer #characterList {
+  background-color: #8e8e8e;
+  align-items: center;
+  padding-top: 5%;
+  width: 100%;
+  height: 8%;
+}
+
+h2 {
+  color: #ffd600;
+  font-family: Ropa Sans;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
 }
 #characterList {
   list-style-type: none;
@@ -32,27 +48,26 @@ background-color:#424242 ;
   cursor: pointer;
 }
 #charactersDetail {
-  background-color: cadetblue;
+  width: 33vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 30%;
+  left: 55%;
 }
-#item-list {
+#charactersDetail #part1 {
+  background-color: #c4c4c4;
+  width: 100%;
+  height: 40%;
   list-style: none;
   padding: 0;
 }
-
-#pagination-buttons {
-  margin-top: 20px;
-}
-
-.pagination-button {
-  display: inline-block;
-  padding: 5px 10px;
-  margin-right: 5px;
-  cursor: pointer;
-  background-color: #ddd;
-  border: 1px solid #999;
-}
-
-.pagination-button.active {
-  background-color: #007bff;
-  color: #fff;
+#charactersDetail #part2 {
+  background-color: #8e8e8e;
+  width: 100%;
+  height: 40%;
+  list-style: none;
+  padding: 0;
 }
