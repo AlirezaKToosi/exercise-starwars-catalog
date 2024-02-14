@@ -3,10 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Protest+Revolution&family=Ropa+Sans:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
     <title>Star Wars Catalog</title>
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/body.css" />
   </head>
   <body>
-    <script src="" type="module"></script>
+    <header>
+      <div id="hero">
+        <div id="title">
+          <p>
+            STAR WARS <br />
+            CATALOG
+          </p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="bodyInformation">
+        <div id="charactersContainer">
+          <h2>Characters</h2>
+          <ul id="characterList"></ul>
+          <div id="navigation">
+              <span class="material-symbols-outlined" id="previousPage">navigate_before</span>
+              <p id="pageInfo"></p>
+              <span class="material-symbols-outlined" id="nextPage">navigate_next</span>
+          </div>
+      </div>
+        <div id="charactersDetail">
+          <h2>Detail</h2>
+          <section id="part1">part1</section>
+          <section id="part2">part2</section>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="index.js" type="module"></script>
   </body>
 </html>

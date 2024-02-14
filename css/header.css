@@ -1,0 +1,28 @@
+body {
+  font-family: "Ropa Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #424242;
+}
+#hero {
+  background-image: url("../assets/Hero.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 34vh;
+}
+#hero p {
+  font-size: 64px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-align: left;
+  color: #ffd600;
+  margin: 0px;
+}
+#hero #title {
+  position: absolute;
+  width: 380px;
+  height: 143px;
+  top: 5%;
+  left: 2%;
+}

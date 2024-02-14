@@ -1,0 +1,58 @@
+.bodyInformation {
+  background-color: #007bff;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+#charactersContainer {
+  background-color: aquamarine;
+  width: 33vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 30%;
+}
+#charactersContainer h2{
+background-color:#424242 ;
+}
+#characterList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#navigation {
+  display: flex;
+  gap: 10px;
+}
+#previousPage,
+#nextPage {
+  cursor: pointer;
+}
+#charactersDetail {
+  background-color: cadetblue;
+}
+#item-list {
+  list-style: none;
+  padding: 0;
+}
+
+#pagination-buttons {
+  margin-top: 20px;
+}
+
+.pagination-button {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  background-color: #ddd;
+  border: 1px solid #999;
+}
+
+.pagination-button.active {
+  background-color: #007bff;
+  color: #fff;
+}
