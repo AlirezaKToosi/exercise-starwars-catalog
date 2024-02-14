@@ -22,15 +22,22 @@
 #charactersContainer #characterList {
   background-color: #8e8e8e;
   align-items: center;
+  width: 100%;
+  height: 72%;
+}
+li {
+  background-color: #676767;
+  align-items: center;
+  justify-content: center;
   padding-top: 5%;
   width: 100%;
-  height: 8%;
+  height: 9%;
 }
 
 h2 {
   color: #ffd600;
   font-family: Ropa Sans;
-  font-size: 30px;
+  font-size: 2vw;
   font-weight: 400;
   letter-spacing: 0.2em;
 }
@@ -42,6 +49,10 @@ h2 {
 #navigation {
   display: flex;
   gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 8%;
 }
 #previousPage,
 #nextPage {
