@@ -10,10 +10,8 @@ async function fetchCharacter(id) {
 async function fetchAllCharacters() {
   let Characters = [];
   try {
-    for (let index = 1; index < 400; index++) {
+    for (let index = 1; index < 30; index++) {
       const character = await fetchCharacter(index);
-      console.log(index);
-      console.log(character);
       Characters.push(character);
     }
   } catch (error) {
@@ -52,9 +50,14 @@ function displayCharacters(page) {
   for (let i = startIndex; i < endIndex; i++) {
     const character = characters[i];
     const listItem = document.createElement("li");
+    const characterLink = document.createElement("a");
     listItem.style.color = colors[i % 3];
     listItem.style.backgroundColor = backgroundColors[i % 3];
     listItem.textContent = character.name;
+    characterLink.href = "#";
+    listItem.style.cursor = "pointer";
+    listItem.addEventListener("click", () => showCharacterDetails(character));
+    listItem.appendChild(characterLink);
     characterList.appendChild(listItem);
   }
 
@@ -78,6 +81,68 @@ document.getElementById("nextPage").addEventListener("click", () => {
     displayCharacters(currentPage);
   }
 });
+
+async function showCharacterDetails(character) {
+  try {
+    const planet = await fetchPlanet(character.homeworld);
+    const characterDetail = document.getElementById("characterDetail");
+    const planetDetail = document.getElementById("planetDetail");
+    characterDetail.style.justifyContent = "center";
+    characterDetail.style.alignItems = "center";
+    planetDetail.style.justifyContent = "center";
+    planetDetail.style.alignItems = "center";
+    characterDetail.innerHTML = ``;
+    planetDetail.innerHTML = ``;
+    const loader1 = document.createElement("div");
+    const loader2 = document.createElement("div");
+    loader1.classList.add("loader");
+    loader2.classList.add("loader");
+    characterDetail.appendChild(loader1);
+    planetDetail.appendChild(loader2);
+
+    setTimeout(() => {
+      characterDetail.removeChild(loader1);
+      planetDetail.removeChild(loader2);
+      characterDetail.style.justifyContent = "flex-start";
+      characterDetail.style.alignItems = "flex-start";
+      planetDetail.style.justifyContent = "flex-start";
+      planetDetail.style.alignItems = "flex-start";
+      characterDetail.innerHTML = `
+            <li id="characterName">${character.name}</li>
+            <li>Height : ${character.height}cm </li>
+            <li>Mass : ${character.mass}kg </li>
+            <li>Hair color : ${character.hair_color}</li>
+            <li>Skin color : ${character.skin_color} </li>
+            <li>Eye color : ${character.eye_color} </li>
+            <li>Birth year : ${character.birth_year} </li>
+            <li>Gender : ${character.gender} </li>
+            <li>Homeworld : ${planet.name} </li>
+          `;
+      planetDetail.innerHTML = `
+          <li id="planetName">Planet : ${planet.name}</li>
+          <li>Rotation period : ${planet.rotation_period}h </li>
+          <li>Orbital period : ${planet.orbital_period}days </li>
+          <li>Diameter : ${planet.diameter}km</li>
+          <li>Climate : ${planet.climate} </li>
+          <li>Gravity : ${planet.eye_color} </li>
+          <li>Terrain : ${planet.birth_year} </li>
+        `;
+    }, 500);
+  } catch (error) {
+    console.error("Error fetching planet data:", error);
+    characterDetail.removeChild(loader);
+    characterDetail.textContent = "Failed to fetch planet data";
+  }
+}
+
+async function fetchPlanet(url) {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error("Failed to fetch planet data");
+  }
+  const data = await response.json();
+  return data;
+}
 
 displayCharacters(currentPage);
 //******************************************************************************** */
