@@ -20,7 +20,6 @@ async function fetchAllCharacters() {
   return Characters;
 }
 
-function showCharacters() {}
 
 fetchAllCharacters()
   .then((characters) => {
